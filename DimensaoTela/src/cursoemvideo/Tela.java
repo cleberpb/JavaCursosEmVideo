@@ -5,6 +5,9 @@
  */
 package cursoemvideo;
 
+import java.awt.Dimension;
+import java.awt.Toolkit;
+
 /**
  *
  * @author clebe
@@ -26,30 +29,68 @@ public class Tela extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        lblResolucao = new javax.swing.JLabel();
+        btnResolucao = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("jLabel1");
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/monitor03.png"))); // NOI18N
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel2.setText("Resolução da Tela:");
+
+        lblResolucao.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lblResolucao.setForeground(new java.awt.Color(102, 102, 102));
+        lblResolucao.setText("Aperte o Botão");
+
+        btnResolucao.setBackground(new java.awt.Color(204, 255, 204));
+        btnResolucao.setText("Mostrar Resolução");
+        btnResolucao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnResolucaoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(46, 46, 46)
+                .addGap(45, 45, 45)
                 .addComponent(jLabel1)
-                .addContainerGap(320, Short.MAX_VALUE))
+                .addGap(54, 54, 54)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(btnResolucao)
+                    .addComponent(lblResolucao)
+                    .addComponent(jLabel2))
+                .addContainerGap(49, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(48, 48, 48)
-                .addComponent(jLabel1)
-                .addContainerGap(204, Short.MAX_VALUE))
+                .addGap(30, 30, 30)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(18, 18, 18)
+                        .addComponent(lblResolucao)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnResolucao))
+                    .addComponent(jLabel1))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnResolucaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResolucaoActionPerformed
+        // TODO add your handling code here:
+        Toolkit tela = Toolkit.getDefaultToolkit();
+        Dimension d = tela.getScreenSize();
+        // String d2 = d.width + "X" + d.height;
+        
+    }//GEN-LAST:event_btnResolucaoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -87,6 +128,9 @@ public class Tela extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnResolucao;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel lblResolucao;
     // End of variables declaration//GEN-END:variables
 }
