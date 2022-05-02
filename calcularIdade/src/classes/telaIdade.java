@@ -5,6 +5,8 @@
  */
 package classes;
 
+import java.util.Calendar;
+
 /**
  *
  * @author Cleber
@@ -15,7 +17,7 @@ public class telaIdade extends javax.swing.JFrame {
      * Creates new form telaIdade
      */
     public telaIdade() {
-        initComponents();
+        initComponents();     
     }
 
     /**
@@ -77,6 +79,15 @@ public class telaIdade extends javax.swing.JFrame {
         lblAnoAtual.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         lblAnoAtual.setForeground(new java.awt.Color(0, 153, 204));
         lblAnoAtual.setText("0");
+        lblAnoAtual.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                lblAnoAtualAncestorAdded(evt);
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -146,6 +157,10 @@ public class telaIdade extends javax.swing.JFrame {
         int idade = 2022 - ano;
         lblIdade.setText(Integer.toString(idade));
     }//GEN-LAST:event_btnCalcularActionPerformed
+
+    private void lblAnoAtualAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_lblAnoAtualAncestorAdded
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblAnoAtualAncestorAdded
 
     /**
      * @param args the command line arguments
