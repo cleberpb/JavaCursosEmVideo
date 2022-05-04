@@ -17,7 +17,7 @@ public class ProgramaMedia {
         System.out.println("A sua média é: " + media);
         
         if (media > 6) {
-            System.out.println("Parabéns você passou");
+            System.out.println("Parabéns! Você passou.");
         }
     }
     
