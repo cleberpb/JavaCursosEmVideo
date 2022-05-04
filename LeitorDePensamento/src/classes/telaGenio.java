@@ -16,7 +16,7 @@ public class telaGenio extends javax.swing.JFrame {
     /**
      * Creates new form telaGenio
      */
-    public telaGenio() { // CONSTRUTOR
+    public telaGenio() { // MÉTODO CONSTRUTOR. executa assim que a tela aparecer.
         initComponents();
         lblFrase.setText("<html>Vou Pensar em um número entre <strong>1 e 5</strong>. Tente adivinhar.</html>");
     }
@@ -70,19 +70,22 @@ public class telaGenio extends javax.swing.JFrame {
 
     private void btnPalpiteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPalpiteActionPerformed
         // TODO add your handling code here:
-        double numero = 1 + Math.random() * (6 - 1);
-        int valor = (int) numero;
+        double numero = 1 + Math.random() * (6 - 1); // gera números  de 1 a 5, mas, sem ser inteiro.(Ex:1,2222)
+        int valor = (int) numero; // esta linnha faz com que os valores de random fique numero inteiro.
         
         int numeroDigitado = Integer.parseInt(txtNumero.getValue().toString());
         
+        //Frases para serem usadas no operador ternário
         String f1 = "<html>ACERTOU!</html>";
         String f2 = "<html>ERROU! Eu pensei no número " + valor + "</html>";
         
-        String resoltado = (valor == numeroDigitado)?f1 : f2;
+        // uso do operador ternário        
+        String resultado = (valor == numeroDigitado)?f1 : f2;
         
-        lblFrase.setFont(new Font("Arial Black", Font.PLAIN, 14));
         
-        lblFrase.setText(resoltado);
+        lblFrase.setFont(new Font("Arial Black", Font.PLAIN, 14));// editando letra: familia da fonte, estilo normal e tamanho.
+        
+        lblFrase.setText(resultado);
         
     }//GEN-LAST:event_btnPalpiteActionPerformed
 
