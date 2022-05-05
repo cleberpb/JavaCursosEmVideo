@@ -8,8 +8,11 @@ public class Contador01 {
         int cc = 0; // cc - contador de cambalhotas
         while (cc < 10) {
             cc++;
-            if (cc == 5 || cc == 7 || cc == 9) {
+            if (cc == 2 || cc == 3 || cc == 4) {
                 continue;
+            }
+            if (cc == 7) {
+                break;
             }
             System.out.println("Cambalhota " + cc);
         }
